@@ -3,11 +3,9 @@ from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
 import pandas as pd
-import flask
-from flask_cors import CORS
 import os
 
-app = dash.Dash('drug-discovery')
+app = dash.Dash(__name__)
 server = app.server
 
 df = pd.read_csv('small_molecule_drugbank.csv').drop(['Unnamed: 0'],axis=1)
